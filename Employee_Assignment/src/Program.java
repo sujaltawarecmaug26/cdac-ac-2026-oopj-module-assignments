@@ -1,4 +1,3 @@
-
 public class Program {
 
 	public static void main(String[] args) {
@@ -74,49 +73,50 @@ public class Program {
 		    		  		
 		    		  			//add Engineer Details here........
 			    		  		System.out.println("====================================");
-			    		  		System.out.print("Enter Manager Name: ");
+			    		  		System.out.print("Enter Engineer Name: ");
 			    		  		String Egname = ConsoleInput.getString();
 			    		  		
-			    		  		System.out.print("Enter Manager Address: ");
+			    		  		System.out.print("Enter Engineer Address: ");
 			    		  		String Egaddress = ConsoleInput.getString();
 			    		  		
-			    		  		System.out.print("Enter Manager Age: ");
+			    		  		System.out.print("Enter Engineer Age: ");
 			    		  		int Egage = ConsoleInput.getInt();
 			    		  		
-			    		  		System.out.print("Enter Manager Salary: ");
+			    		  		System.out.print("Enter Engineer Salary: ");
 			    		  		float EgbasicSalary = ConsoleInput.getFloat();
 			    		  		
-			    		  		System.out.print("Enter Manager Gender(M/F): ");
+			    		  		System.out.print("Enter Engineer Gender(M/F): ");
 			    		  		char Eggender = ConsoleInput.getChar();
 			    		  		
-			    		  		System.out.print("Enter Manager Hra: ");
+			    		  		System.out.print("Enter Engineer Hra: ");
 			    		  		float overtime = ConsoleInput.getFloat();
 			    		  		System.out.print("====================================");
 			    		  		
 			    		  		
 			    		  		arrEngineer[engineerCount] = new Engineer(Egname,Egaddress,Egage,Eggender,EgbasicSalary,overtime);
 			    		  		engineerCount++;
+			    		  		
 		    		  			break;
 		    		  		case 6:
 		    		  			
 		    		  		//add Engineer Details here........
 			    		  		System.out.println("====================================");
-			    		  		System.out.println("Enter Manager Name: ");
+			    		  		System.out.println("Enter SalesPerson Name: ");
 			    		  		String Sname = ConsoleInput.getString();
 			    		  		
-			    		  		System.out.print("Enter Manager Address: ");
+			    		  		System.out.print("Enter SalesPerson Address: ");
 			    		  		String Saddress = ConsoleInput.getString();
 			    		  		
-			    		  		System.out.print("Enter Manager Age: ");
+			    		  		System.out.print("Enter SalesPerson Age: ");
 			    		  		int Sage = ConsoleInput.getInt();
 			    		  		
-			    		  		System.out.print("Enter Manager Salary: ");
+			    		  		System.out.print("Enter SalesPerson Salary: ");
 			    		  		float SbasicSalary = ConsoleInput.getFloat();
 			    		  		
-			    		  		System.out.print("Enter Manager Gender(M/F): ");
+			    		  		System.out.print("Enter SalesPerson Gender(M/F): ");
 			    		  		char Sgender = ConsoleInput.getChar();
 			    		  		
-			    		  		System.out.print("Enter Manager Hra: ");
+			    		  		System.out.print("Enter SalesPerson Hra: ");
 			    		  		float commission = ConsoleInput.getFloat();
 			    		  		System.out.println("====================================");
 			    		  		
