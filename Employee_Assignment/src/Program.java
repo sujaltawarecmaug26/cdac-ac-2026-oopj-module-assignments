@@ -19,7 +19,7 @@ public class Program {
 		  System.out.println("1) Add");
 		  System.out.println("2) Display");
 		  System.out.println("3) Sort");
-		  System.out.println("4) Save to File");
+		  System.out.println("4) Save and Load");
 		  System.out.println("5) Exit");
 		  
 		  System.out.println("Enter your choice:");
