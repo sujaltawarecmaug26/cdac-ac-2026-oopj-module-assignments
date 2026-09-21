@@ -1,23 +1,26 @@
+import java.io.*;
+
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Manager [] arrManager = new Manager[5];
-		Engineer [] arrEngineer = new Engineer[5];
-		SalesPerson[] arrSalesPerson = new SalesPerson[5];
+		Manager [] arrManager = new Manager[50];
+		Engineer [] arrEngineer = new Engineer[50];
+		SalesPerson[] arrSalesPerson = new SalesPerson[50];
 		
 		int managerCount = 0;
 		int engineerCount = 0;
 		int salesPersonCount = 0;
 		int mainChoice = 1;
 		
-		while(mainChoice != 4)
+		while(mainChoice != 5)
 		{
 		  System.out.println(".... Main Menu....");
 		  System.out.println("1) Add");
 		  System.out.println("2) Display");
 		  System.out.println("3) Sort");
-		  System.out.println("4) Exit");
+		  System.out.println("4) Save to File");
+		  System.out.println("5) Exit");
 		  
 		  System.out.println("Enter your choice:");
 		  int choice = ConsoleInput.getInt();
@@ -29,7 +32,7 @@ public class Program {
 		             // Add
 		        	int addChoice = 1;
 		        	while(addChoice != 7) {
-		        		
+		        		System.out.println("");
 		        		System.out.println(".... Add Menu....");
 		        		System.out.println("4) Manager");
 		      		  	System.out.println("5) Engineer");
@@ -284,10 +287,82 @@ public class Program {
 		             break;
 
 		        case 4:
-		        	//Exit 
-		        	System.out.println("Exiting Main Menu......");
-		             mainChoice = 4;
+		        	//save data into the file
+				try {
+					BufferedWriter bw =
+		            new BufferedWriter(new FileWriter("EmployeeData.txt"));
+					
+					//write manager data into a file
+					for (int i = 0; i < managerCount; i++) {
+
+						bw.write(
+							    "MANAGER|" +
+							    arrManager[i].getName() + "|" +
+							    arrManager[i].getAddress() + "|" +
+							    arrManager[i].getAge() + "|" +
+							    arrManager[i].getGender() + "|" +
+							    arrManager[i].getBasicSalary() + "|" +
+							    arrManager[i].getHra()
+							);
+							bw.newLine();
+					}
+					
+					//write engineer data into a file
+					for (int i = 0; i < engineerCount; i++) {
+						bw.write(
+							    "ENGINEER|" +
+							    arrEngineer[i].getName() + "|" +
+							    arrEngineer[i].getAddress() + "|" +
+							    arrEngineer[i].getAge() + "|" +
+							    arrEngineer[i].getGender() + "|" +
+							    arrEngineer[i].getBasicSalary() + "|" +
+							    arrEngineer[i].getOvertime()
+							);
+							bw.newLine();
+					}
+					
+					//write Salesperson data into a file
+					for (int i = 0; i < managerCount; i++) {
+					    
+						bw.write(
+							    "SALESPERSON|" +
+							    arrSalesPerson[i].getName() + "|" +
+							    arrSalesPerson[i].getAddress() + "|" +
+							    arrSalesPerson[i].getAge() + "|" +
+							    arrSalesPerson[i].getGender() + "|" +
+							    arrSalesPerson[i].getBasicSalary() + "|" +
+							    arrSalesPerson[i].getCommission()
+							);
+							bw.newLine();
+					}
+					
+					bw.close();
+		        	System.out.println("Successfully saved......");
+		        	
+		        	
+					BufferedReader br = new BufferedReader(new FileReader("EmployeeData.txt"));
+					
+					String data;
+					
+					while((data = br.readLine()) != null) {
+						
+						System.out.println(data);
+					}
+					
+					br.close();
+					
+				} catch (IOException e) {
+					
+					e.printStackTrace();
+				}
+		        	
 		             break;
+		        case 5:
+		        	//exit
+		        	System.out.println("Exiting Main Menu......");
+		             mainChoice = 5;
+		             break;
+		        	
 		    }
 		}
 
